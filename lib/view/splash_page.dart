@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:dashboard_application_by_noppon/appconfigs/app_colors.dart';
+import 'package:dashboard_application_by_noppon/appconfigs/app_text_styles.dart';
 import 'package:dashboard_application_by_noppon/view/dashboard/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
@@ -66,20 +66,9 @@ class _SplashPageState extends State<SplashPage>
               children: [
                 const Icon(Icons.flight_takeoff, color: Colors.white, size: 72),
                 const SizedBox(height: 16),
-                const Text(
-                  'Crew Dashboard',
-                  style: TextStyle(
-                    color: AppColors.background,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.2,
-                  ),
-                ),
+                const Text('Crew Dashboard', style: AppTextStyles.appTitle),
                 const SizedBox(height: 8),
-                const Text(
-                  'Ready for duty',
-                  style: TextStyle(color: Colors.white54, fontSize: 14),
-                ),
+                const Text('Ready for duty', style: AppTextStyles.appSubtitle),
               ],
             ),
           ),

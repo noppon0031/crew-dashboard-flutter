@@ -252,4 +252,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     color: AppColors.textOnDark,
   );
+
+  /// Subtitle ใต้ App title เช่น "Ready for duty"
+  static const appSubtitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 20 / 14,
+    color: Colors.white54,
+  );
 }
