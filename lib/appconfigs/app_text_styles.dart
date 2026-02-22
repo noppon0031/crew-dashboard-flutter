@@ -261,4 +261,13 @@ class AppTextStyles {
     height: 20 / 14,
     color: Colors.white54,
   );
+
+  /// Staff ID / Crew badge เช่น "DD / 12345"
+  static const crewBadge = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+    height: 16 / 12,
+    color: AppColors.textPrimary,
+  );
 }

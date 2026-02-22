@@ -38,6 +38,9 @@ class DashboardPage extends StatelessWidget {
             HeaderSection(
               notificationCount: data.notificationsCount,
               dateLabel: data.todayDuty.date,
+              crewRole: data.todayDuty.crew.role,
+              crewName: data.todayDuty.crew.name,
+              staffId: data.todayDuty.crew.staffId,
             ),
             Expanded(
               child: CustomScrollView(

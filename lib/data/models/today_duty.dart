@@ -1,3 +1,4 @@
+import 'package:dashboard_application_by_noppon/data/models/crewInfo.dart';
 import 'package:dashboard_application_by_noppon/data/models/duty_timings.dart';
 import 'package:dashboard_application_by_noppon/data/models/flight.dart';
 import 'package:dashboard_application_by_noppon/data/models/today_other_duty.dart';
@@ -10,6 +11,7 @@ class TodayDuty {
   final List<Flight> flights;
   final bool isWindowOpen;
   final List<OtherDuty> otherDuties;
+  final CrewInfo crew;
 
   TodayDuty({
     required this.dutyId,
@@ -19,6 +21,7 @@ class TodayDuty {
     required this.flights,
     required this.isWindowOpen,
     required this.otherDuties,
+    required this.crew,
   });
 
   factory TodayDuty.fromJson(Map<String, dynamic> json) {
@@ -34,6 +37,9 @@ class TodayDuty {
       otherDuties: (json['other_duties'] as List? ?? [])
           .map((e) => OtherDuty.fromJson(e))
           .toList(),
+      crew: json['crew'] != null
+          ? CrewInfo.fromJson(json['crew'])
+          : CrewInfo.empty(),
     );
   }
 }

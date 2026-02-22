@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps, no_leading_underscores_for_local_identifiers
+
 import 'package:dashboard_application_by_noppon/appconfigs/app_image.dart';
 import 'package:dashboard_application_by_noppon/appconfigs/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -5,11 +7,17 @@ import 'package:flutter/material.dart';
 class HeaderSection extends StatelessWidget {
   final int notificationCount;
   final String dateLabel;
+  final String crewRole;
+  final String crewName;
+  final String staffId;
 
   const HeaderSection({
     super.key,
     required this.notificationCount,
     required this.dateLabel,
+    required this.crewRole,
+    required this.crewName,
+    required this.staffId,
   });
 
   @override
@@ -33,10 +41,16 @@ class HeaderSection extends StatelessWidget {
   }
 
   Widget _topRow() {
+    String _buildCrewDisplay(String role, String name) {
+      if (role.isEmpty && name.isEmpty) return 'CREW';
+      if (role.isEmpty) return name;
+      if (name.isEmpty) return role;
+      return '$role. $name';
+    }
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // LEFT : Date
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,26 +71,24 @@ class HeaderSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'PIC. ONGSA NANTAPIN',
+                  _buildCrewDisplay(crewRole, crewName),
                   style: AppTextStyles.headerUserName.copyWith(
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 4),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 4,
+                if (staffId.isNotEmpty)
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFD200),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(staffId, style: AppTextStyles.crewBadge),
                   ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFFD200),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: const Text(
-                    'DD / 12345',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-                  ),
-                ),
               ],
             ),
             const SizedBox(width: 12),

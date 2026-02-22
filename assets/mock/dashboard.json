@@ -6,6 +6,11 @@
       "duty_id": "FLY01-02",
       "route": "DMK-CNX-DMK",
       "date": "Mon 12 Jan 26",
+      "crew": {
+        "role": "PIC",
+        "name": "ONGSA NANTAPIN",
+        "staff_id": "DD / 12345"
+      },
       "timings": {
         "report": "08:00L",
         "duty_fdp": "5h 45m",
