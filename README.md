@@ -111,20 +111,22 @@ Library สำเร็จรูปมัก lock design ปรับได้�
 
 ### Splash Screen
 
-![Splash Screen](screenshots/splash_screen.png)
+<img src="screenshots/splash_screen.png" width="240"/>
 
 ### Dashboard
 
-![Dashboard](screenshots/home_dashboard_1.png)
-![Dashboard](screenshots/home_dashboard_2.png)
+<p>
+  <img src="screenshots/home_dashboard_1.png" width="320"/>
+  <img src="screenshots/home_dashboard_2.png" width="320"/>
+</p>
 
-### Pull to refresh
+### Pull to Refresh
 
-![Pull to refresh](screenshots/pull_refresh.png)
+<img src="screenshots/pull_refresh.png" width="320"/>
 
-### loading
+### Loading
 
-![loading](screenshots/loading.png)
+<img src="screenshots/loading.png" width="220"/>
 
 ## Author
 
