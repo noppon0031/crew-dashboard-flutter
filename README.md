@@ -105,7 +105,7 @@
 - ต้องการ behavior ที่ไม่ตรงกับ default ของ lib ทั่วไป
 - รองรับการปรับ animation / state ในอนาคต
 
-Library สำเร็จรูปมัก lock design ปรับได้จำกัดต้อง workaround เยอะเมื่อ design ไม่ตรงเขียนเอง → design ตรง Figma 100%
+Library สำเร็จรูปมัก lock design ปรับได้จำกัดต้อง workaround เยอะเมื่อ design ไม่ตรง เขียนเอง → design ตรง Figma 100%
 
 ## Screenshots
 
