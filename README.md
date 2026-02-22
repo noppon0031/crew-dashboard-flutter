@@ -62,7 +62,7 @@
 
 ---
 
-## ✈️ Splash Screen Animation Concept
+## Splash Screen Animation Concept
 
 ### แนวคิดหลัก
 
