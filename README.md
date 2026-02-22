@@ -109,7 +109,7 @@ Library สำเร็จรูปมัก lock design ปรับได้�
 
 ## Screenshots
 
-### Splash Screen
+### Splash Screen (มี Animation)
 
 <img src="screenshots/splash_screen.png" width="240"/>
 
@@ -120,11 +120,11 @@ Library สำเร็จรูปมัก lock design ปรับได้�
   <img src="screenshots/home_dashboard_2.png" width="320"/>
 </p>
 
-### Pull to Refresh
+### Pull to Refresh (Animation)
 
 <img src="screenshots/pull_refresh.png" width="320"/>
 
-### Loading
+### Loading (Animation)
 
 <img src="screenshots/loading.png" width="220"/>
 
