@@ -6,7 +6,7 @@ class DutyTimings {
   final String tafb;
   final String layover;
 
-  DutyTimings({
+  const DutyTimings({
     required this.report,
     required this.dutyFdp,
     required this.offClear,
@@ -17,12 +17,31 @@ class DutyTimings {
 
   factory DutyTimings.fromJson(Map<String, dynamic> json) {
     return DutyTimings(
-      report: json['report'],
-      dutyFdp: json['duty_fdp'],
-      offClear: json['off_clear'],
-      flightTime: json['flight_time'],
-      tafb: json['tafb'],
-      layover: json['layover'],
+      report: json['report']?.toString() ?? '',
+      dutyFdp: json['duty_fdp']?.toString() ?? '',
+      offClear: json['off_clear']?.toString() ?? '',
+      flightTime: json['flight_time']?.toString() ?? '',
+      tafb: json['tafb']?.toString() ?? '',
+      layover: json['layover']?.toString() ?? '',
     );
   }
+
+  factory DutyTimings.empty() {
+    return const DutyTimings(
+      report: '',
+      dutyFdp: '',
+      offClear: '',
+      flightTime: '',
+      tafb: '',
+      layover: '',
+    );
+  }
+
+  bool get isEmpty =>
+      report.isEmpty &&
+      dutyFdp.isEmpty &&
+      offClear.isEmpty &&
+      flightTime.isEmpty &&
+      tafb.isEmpty &&
+      layover.isEmpty;
 }

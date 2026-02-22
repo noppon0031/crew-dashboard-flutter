@@ -21,4 +21,12 @@ class DashboardData {
           .toList(),
     );
   }
+
+  factory DashboardData.empty() {
+    return DashboardData(
+      notificationsCount: 0,
+      todayDuty: TodayDuty.empty(),
+      upcomingDuties: const [],
+    );
+  }
 }

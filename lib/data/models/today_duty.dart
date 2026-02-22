@@ -26,9 +26,9 @@ class TodayDuty {
 
   factory TodayDuty.fromJson(Map<String, dynamic> json) {
     return TodayDuty(
-      dutyId: json['duty_id'],
-      route: json['route'],
-      date: json['date'],
+      dutyId: json['duty_id']?.toString() ?? '',
+      route: json['route']?.toString() ?? '',
+      date: json['date']?.toString() ?? '',
       timings: DutyTimings.fromJson(json['timings']),
       flights: (json['flights'] as List)
           .map((e) => Flight.fromJson(e))
@@ -42,4 +42,20 @@ class TodayDuty {
           : CrewInfo.empty(),
     );
   }
+
+   factory TodayDuty.empty() {
+    return TodayDuty(
+      dutyId: '',
+      route: '',
+      date: '',
+      timings: DutyTimings.empty(),
+      flights: const [],
+      isWindowOpen: false,
+      otherDuties: const [],
+      crew: CrewInfo.empty(),
+    );
+  }
+
+  bool get hasFlights => flights.isNotEmpty;
+  bool get hasOtherDuties => otherDuties.isNotEmpty;
 }

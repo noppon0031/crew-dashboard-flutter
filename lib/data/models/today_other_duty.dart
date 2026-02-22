@@ -4,7 +4,7 @@ class OtherDuty {
   final String title;
   final String type;
 
-  OtherDuty({
+  const OtherDuty({
     required this.id,
     required this.dateLabel,
     required this.title,
@@ -13,10 +13,17 @@ class OtherDuty {
 
   factory OtherDuty.fromJson(Map<String, dynamic> json) {
     return OtherDuty(
-      id: json['id'],
-      dateLabel: json['date_label'],
-      title: json['title'],
-      type: json['type'],
+      id: json['id']?.toString() ?? '',
+      dateLabel: json['date_label']?.toString() ?? '',
+      title: json['title']?.toString() ?? '',
+      type: json['type']?.toString() ?? '',
     );
   }
+
+  factory OtherDuty.empty() {
+    return const OtherDuty(id: '', dateLabel: '', title: '', type: '');
+  }
+
+  bool get isEmpty =>
+      id.isEmpty && dateLabel.isEmpty && title.isEmpty && type.isEmpty;
 }

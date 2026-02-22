@@ -7,7 +7,7 @@ class UpcomingDuty {
   final bool isUrgent;
   final String? urgentLabel;
 
-  UpcomingDuty({
+  const UpcomingDuty({
     required this.id,
     required this.dateNumber,
     required this.month,
@@ -19,13 +19,28 @@ class UpcomingDuty {
 
   factory UpcomingDuty.fromJson(Map<String, dynamic> json) {
     return UpcomingDuty(
-      id: json['id'],
-      dateNumber: json['date_number'],
-      month: json['month'],
-      dayTypeLabel: json['day_type_label'],
-      title: json['title'],
-      isUrgent: json['is_urgent'],
-      urgentLabel: json['urgent_label'],
+      id: json['id']?.toString() ?? '',
+      dateNumber: json['date_number']?.toString() ?? '',
+      month: json['month']?.toString() ?? '',
+      dayTypeLabel: json['day_type_label']?.toString() ?? '',
+      title: json['title']?.toString() ?? '',
+      isUrgent: json['is_urgent'] == true,
+      urgentLabel: json['urgent_label']?.toString(),
     );
   }
+
+  factory UpcomingDuty.empty() {
+    return const UpcomingDuty(
+      id: '',
+      dateNumber: '',
+      month: '',
+      dayTypeLabel: '',
+      title: '',
+      isUrgent: false,
+      urgentLabel: null,
+    );
+  }
+
+  bool get hasUrgentLabel =>
+      isUrgent && urgentLabel != null && urgentLabel!.isNotEmpty;
 }
