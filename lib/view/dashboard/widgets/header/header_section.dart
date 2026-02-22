@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 
 class HeaderSection extends StatelessWidget {
   final int notificationCount;
+  final String dateLabel;
 
-  const HeaderSection({super.key, required this.notificationCount});
+  const HeaderSection({
+    super.key,
+    required this.notificationCount,
+    required this.dateLabel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +41,11 @@ class HeaderSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'MONDAY',
+              dayFull,
               style: AppTextStyles.headerDayLabel.copyWith(color: Colors.white),
             ),
             Text(
-              '12 JAN',
+              dayMonth,
               style: AppTextStyles.headerDate.copyWith(color: Colors.white),
             ),
           ],
@@ -87,6 +92,25 @@ class HeaderSection extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String get dayFull {
+    final day = dateLabel.split(' ').first;
+    const map = {
+      'Mon': 'MONDAY',
+      'Tue': 'TUESDAY',
+      'Wed': 'WEDNESDAY',
+      'Thu': 'THURSDAY',
+      'Fri': 'FRIDAY',
+      'Sat': 'SATURDAY',
+      'Sun': 'SUNDAY',
+    };
+    return map[day] ?? day.toUpperCase();
+  }
+
+  String get dayMonth {
+    final parts = dateLabel.split(' '); // [Mon, 12, Jan, 26]
+    return '${parts[1]} ${parts[2].toUpperCase()}';
   }
 
   Widget _flightBanner() {

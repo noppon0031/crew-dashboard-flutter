@@ -35,7 +35,10 @@ class DashboardPage extends StatelessWidget {
 
         return Column(
           children: [
-            HeaderSection(notificationCount: data.notificationsCount),
+            HeaderSection(
+              notificationCount: data.notificationsCount,
+              dateLabel: data.todayDuty.date,
+            ),
             Expanded(
               child: CustomScrollView(
                 physics: const BouncingScrollPhysics(
